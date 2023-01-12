@@ -9,7 +9,7 @@ app.use(express.json({ extended: true }));
 // const usersRouter = require("./routes/users.route");
 
 // const favoriteTeamRouter = require("./routes/favoriteTeam.route");
-const accountantsRouter = require("./routes/accountants.route");
+const usersRouter = require("./routes/users.route");
 const thriftsRouter = require("./routes/thrifts.route");
 const insightsRouter = require("./routes/insights.route");
 
@@ -20,7 +20,7 @@ mongoose
 
 //   app.use("/users", usersRouter);
 //   app.use("/favoriteTeam", favoriteTeamRouter);
-  app.use("/accountants", accountantsRouter);
+  app.use("/users", usersRouter);
   app.use("/thrifts", thriftsRouter);
   app.use("/insights", insightsRouter);
 

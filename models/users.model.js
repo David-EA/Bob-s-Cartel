@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const accountantSchema = new Schema(
+const usersSchema = new Schema(
   {
     first_name: {
       required: true,
@@ -30,10 +30,11 @@ const accountantSchema = new Schema(
       type: String,
       required: true,
     },
-    gender: {
+    role: {
       type: String,
-      enum: ["MALE", "FEMALE", "OTHERS"],
-      default: "OTHERS",
+      enum: ["accountant", "admin", "super-user"],
+      default: "",
+      required: true
     },
     username: {
       type: String,
@@ -44,6 +45,6 @@ const accountantSchema = new Schema(
   { timestamps: true }
 );
 
-const accountant = mongoose.model("accountant", accountantSchema);
+const user = mongoose.model("user", usersSchema);
 
-module.exports = accountant;
+module.exports = user;
